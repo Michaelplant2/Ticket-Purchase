@@ -4,24 +4,28 @@ TICKET_PRICE = 10
 
 tickets_remaining = 100
 
-print("There are {} tickets remaining.".format(tickets_remaining))
+while tickets_remaining:
 
-name = input("What is your name?: ")
+    print("There are {} tickets remaining.".format(tickets_remaining))
 
-num_tickets = input("How many tickets would you like, {}?: ".format(name))
-num_tickets = int(num_tickets)
+    name = input("What is your name?: ")
 
-amount_due = num_tickets * TICKET_PRICE
+    num_tickets = input("How many tickets would you like, {}?: ".format(name))
+    num_tickets = int(num_tickets)
 
-print("Total due is ${}".format(amount_due))
+    amount_due = num_tickets * TICKET_PRICE
 
-will_proceed = input("Do you want to proceed with the purchase?: Y/N  ")
+    print("Total due is ${}".format(amount_due))
 
-if will_proceed.upper() == "Y":
-    print("Sold!")
-    tickets_remaining -= num_tickets
+    will_proceed = input("Do you want to proceed with the purchase?: Y/N  ")
 
-else: 
-    print("Thank you anyway, {}".format(name))
+    if will_proceed.upper() == "Y":
+        print("Sold!")
+        tickets_remaining -= num_tickets
+
+    else: 
+        print("Thank you anyway, {}".format(name))
+
+print("Sorry sold out")
 
 sys.exit()
